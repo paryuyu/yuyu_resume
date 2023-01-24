@@ -15,10 +15,12 @@ function ProjectItem({ item }: any) {
   return (<>
   
     <Box>
-    {mqValue &&<><Box sx={headerOut} onClick={handleMove}>
-    
+    {mqValue &&<>
+    <Box sx={headerOut} onClick={handleMove}>
+    <Box sx={mqheaderTextBox}>
       <Typography sx={mqnum}>{item.id}</Typography>
       <Typography sx={mqtitle}>{item.title}</Typography>
+      </Box>
 
       </Box>
       </> }
@@ -56,12 +58,22 @@ function ProjectItem({ item }: any) {
 }
 
 export default ProjectItem;
-
-const headerOut={
-  border:'1px #333 solid',
+const mqheaderTextBox ={
   display:'flex',
   justifyContent: 'center',
+}
+const headerOut={
+  border:'1px #333 solid',
+  borderRadius:2,
+  paddingX:1,
+  display:'flex',
+  // justifyContent: 'center',
   alignItems: 'center',
+  cursor:'pointer',
+  "&:hover":{
+    bgcolor:'#ddd'
+  }
+  
 }
 
 const mqdetailBox={
@@ -84,11 +96,11 @@ const mqitembox={
   justifyContent: 'center',
 }
 const mqnum ={
-fontSize:27
+fontSize:20
 }
 
 const mqtitle={
-  fontSize:25,
+  fontSize:20,
   fontWeight:100,
   ml:1
 }
