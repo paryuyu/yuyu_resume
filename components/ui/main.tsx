@@ -116,7 +116,7 @@ export default function MainPage() {
             <ProjectsPage />
           </Box> :
           page === "Projects" ?
-            <Box ref={projectRef} sx={borderLine}>
+            <Box ref={projectRef}>
               <ProjectsPage />
             </Box> : <></>
         }
@@ -126,7 +126,7 @@ export default function MainPage() {
             <AboutMePage />
           </Box>
           : page === "About Me" ?
-            <Box ref={aboutmeRef} sx={borderLine}>
+            <Box ref={aboutmeRef}>
               <AboutMePage />
             </Box> : <></>}
 
