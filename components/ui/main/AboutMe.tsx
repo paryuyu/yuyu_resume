@@ -44,12 +44,10 @@ function AboutMePage() {
         onClick={() => { router.push("resume") }}
         sx={mqbox} >
         <Box sx={miniheader}>
-          <Typography variant="h5">이력서 바로가기</Typography>
-          <IconButton onClick={() => { router.push("resume") }}>
-            <AiOutlineArrowRight />
-          </IconButton>
+          <Typography variant="h6">이력서 바로가기</Typography>
+            <AiOutlineArrowRight  onClick={() => { router.push("resume") }} size={20}/>
         </Box>
-        <Typography>새로운 것를 두려워하지 않고 끊임없이 공부하고 도전하는 개발자가 될 것 입니다. 활발한 의견 교류를 지향하며 여러 의견을 적극적으로 수용하는 개발자가 되겠습니다.</Typography>
+        <Typography sx={mqtext}>새로운 것를 두려워하지 않고 끊임없이 공부하고 도전하는 개발자가 될 것 입니다. 활발한 의견 교류를 지향하며 여러 의견을 적극적으로 수용하는 개발자가 되겠습니다.</Typography>
       </Box>
     </>
     }
@@ -59,13 +57,23 @@ function AboutMePage() {
 }
 
 export default AboutMePage;
+const mqtext = {
+  borderTop:'#333 1px solid'
+}
 const miniheader = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  borderBottom: "1px #333 solid"
+ 
+  padding:0.5,
+  "&:hover":{
+    bgcolor:'#ddd',
+   borderRadius:2
+
+  }
 }
 const idCardText = {
+  
   fontSize: 50,
   fontWeight: 100,
   color: '#979797',
