@@ -73,6 +73,8 @@ const boxStyle = {
   display: 'flex',
   cursor: 'pointer',
   zIndex: 100,
+  borderRadius:1,
+  marginY:1
 }
 
 const mqboxStyle = {

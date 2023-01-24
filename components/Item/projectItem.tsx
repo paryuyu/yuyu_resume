@@ -2,6 +2,8 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import { useContext } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsArrow90DegRight, BsArrowBarRight, BsArrowRight } from "react-icons/bs";
 import { MqContext } from "../../mq_context/context";
 
 function ProjectItem({ item }: any) {
@@ -13,42 +15,42 @@ function ProjectItem({ item }: any) {
 
 
   return (<>
-  
+
     <Box>
-    {mqValue &&<>
-    <Box sx={headerOut} onClick={handleMove}>
-    <Box sx={mqheaderTextBox}>
-      <Typography sx={mqnum}>{item.id}</Typography>
-      <Typography sx={mqtitle}>{item.title}</Typography>
-      </Box>
+      {mqValue && <>
+        <Box sx={headerOut} onClick={handleMove}>
+          <Box sx={mqheaderTextBox}>
+            <Typography sx={mqnum}>{item.id}</Typography>
+            <Typography sx={mqtitle}>{item.title}</Typography>
+          </Box>
+          <AiOutlineArrowRight size={17} />
+        </Box>
+      </>}
 
-      </Box>
-      </> }
+      <Typography
+        sx={!mqValue ? { ...titleNumText } : { ...mqtitleNumText }}
+        onClick={handleMove}>{item.id}</Typography>
 
-      <Typography 
-      sx={!mqValue ? {...titleNumText}:{...mqtitleNumText}}
-       onClick={handleMove}>{item.id}</Typography>
+      <Box sx={!mqValue ? { ...itembox } : { ...mqitembox }}>
+        <Typography variant='h6' sx={!mqValue ? { ...titleText } : { ...mqtitleText }}>{item.title}</Typography>
 
-      <Box sx={!mqValue ? {...itembox}:{...mqitembox}}>
-        <Typography variant='h6' sx={!mqValue ? {...titleText}:{...mqtitleText}}>{item.title}</Typography>
-
-        <Box sx={!mqValue ? {...detailBox}:{...mqdetailBox}}>
-          <Box sx={!mqValue ?{...detailList}:{...mqdetailList}}>
+        <Box sx={!mqValue ? { ...detailBox } : { ...mqdetailBox }}>
+          <Box sx={!mqValue ? { ...detailList } : { ...mqdetailList }}>
             <Typography>진행상황</Typography>
             {item.process ? <Typography sx={detailStyle}>완료</Typography> : <Typography sx={detailStyle}>진행중</Typography>}
           </Box>
 
-     
-          <Box sx={!mqValue ?{...detailList}:{...mqdetailList}}>
+
+          <Box sx={!mqValue ? { ...detailList } : { ...mqdetailList }}>
             <Typography>시작날짜</Typography>
-            <Typography sx={detailStyle}>{item.period[0]}</Typography> 
+            <Typography sx={detailStyle}>{item.period[0]}</Typography>
           </Box>
 
-         {item.period.length > 1 &&  
-         <Box sx={!mqValue ?{...detailList}:{...mqdetailList}}>
-            <Typography>마지막날짜</Typography>
-            <Typography sx={detailStyle}>{item.period[1]}</Typography> 
-          </Box>}
+          {item.period.length > 1 &&
+            <Box sx={!mqValue ? { ...detailList } : { ...mqdetailList }}>
+              <Typography>마지막날짜</Typography>
+              <Typography sx={detailStyle}>{item.period[1]}</Typography>
+            </Box>}
 
         </Box>
       </Box>
@@ -58,72 +60,73 @@ function ProjectItem({ item }: any) {
 }
 
 export default ProjectItem;
-const mqheaderTextBox ={
-  display:'flex',
+const mqheaderTextBox = {
+  display: 'flex',
   justifyContent: 'center',
 }
-const headerOut={
-  border:'1px #333 solid',
-  borderRadius:2,
-  paddingX:1,
-  display:'flex',
-  // justifyContent: 'center',
+const headerOut = {
+  borderTop: '1px #595959 solid',
+  borderBottom: '1px #595959 solid',
+  paddingX: 1,
+  display: 'flex',
   alignItems: 'center',
-  cursor:'pointer',
-  "&:hover":{
-    bgcolor:'#ddd'
-  }
-  
-}
-
-const mqdetailBox={
-  width:'100%',
-  
-}
-
-const mqdetailList={
-  display:'flex',
   justifyContent: 'space-between',
-  paddingX:1,
-  borderBottom:'1px solid #333'
-}
-const itembox={
+  cursor: 'pointer',
+
+  "&:hover": {
+    bgcolor: '#ddd'
+  }
 
 }
 
-const mqitembox={
-  display:'flex',
+const mqdetailBox = {
+  width: '100%',
+
+}
+
+const mqdetailList = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  paddingX: 1,
+  borderBottom: '1px dashed #595959'
+}
+const itembox = {
+
+}
+
+const mqitembox = {
+  display: 'flex',
   justifyContent: 'center',
 }
-const mqnum ={
-fontSize:20
+const mqnum = {
+  fontSize: 20
 }
 
-const mqtitle={
-  fontSize:20,
-  fontWeight:100,
-  ml:1
+const mqtitle = {
+  fontSize: 20,
+  fontWeight: 100,
+  ml: 1
 }
-const mqminiheader ={
-  display:'flex',
+const mqminiheader = {
+  display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  
+
 }
-const mqtitleText ={
-  display:'none'
+const mqtitleText = {
+  display: 'none'
 }
 
-const mqtitleNumText ={
-  display:'none'
+const mqtitleNumText = {
+  display: 'none'
 }
 
 const detailList = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  width:'90%',
-  borderBottom:'1px #333 dashed'
+  width: '90%',
+  borderBottom: '1px #333 dashed'
 }
 
 const detailStyle = {
