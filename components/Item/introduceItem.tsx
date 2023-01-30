@@ -3,8 +3,16 @@ import { useContext } from "react";
 
 import { SlArrowDown } from 'react-icons/sl';
 import { MqContext } from "../../mq_context/context";
+import { selfIntroduceType } from "../lib/dataType";
 
-export default function IntoduceItem({ item, selectedId, onSelec }: any) {
+type props = {
+  item: selfIntroduceType;
+  selectedId: number[];
+  onSelec: (val: number) => void;
+}
+
+
+export default function IntoduceItem({ item, selectedId, onSelec }: props) {
   const mqValue = useContext(MqContext);
 
   return (
@@ -19,11 +27,11 @@ export default function IntoduceItem({ item, selectedId, onSelec }: any) {
         }]}>
 
         <Typography variant={mqValue ? "body1" : "h6"} sx={mqValue ? { ...minititle } : { ...mqminititle }}>{item.title}</Typography>
-        <SlArrowDown size={mqValue? 15:20}/>
+        <SlArrowDown size={mqValue ? 15 : 20} />
       </Box>
       {selectedId.includes(item.id) &&
         <>
-         
+
           <Box sx={contentBox}>
             <Typography sx={{ ...contentFont }}>
               {item.content}
@@ -36,7 +44,7 @@ export default function IntoduceItem({ item, selectedId, onSelec }: any) {
 }
 
 const contentBox = {
-  borderTop:'1px #ddd solid',
+  borderTop: '1px #ddd solid',
 
 }
 
@@ -64,7 +72,6 @@ const mqminititle = {
 }
 
 const minititle = {
-  // color: '#333',
   fontFamily: 'inherit'
 }
 
@@ -86,6 +93,6 @@ const mqitemBox = {
 const contentFont = {
   fontSize: 15,
   marginTop: 2,
-  fontWeight:100,
-  paddingX:2
+  fontWeight: 100,
+  paddingX: 2
 }

@@ -1,20 +1,18 @@
 import { Container } from "@mui/material";
-import { useState } from "react";
 import Footer from "./ui/footer";
 import Header from "./ui/header";
-import Main from "./ui/main";
 import { MqContextProvider, PageManageProvider } from "../mq_context/context";
-// import { goBackProvider } from "../mq_context/context";
-export default function Layout({ children }: any) {
 
-  const handleContainer = () => {
+type props = {
+  children : JSX.Element
+}
 
-  }
+export default function Layout({ children }:props) {
+
   return (
       <MqContextProvider>
         <PageManageProvider>
           <Container
-            onClick={handleContainer}
             disableGutters={true}
             maxWidth={false}
             sx={{ ...containerStyle }}>
@@ -30,5 +28,7 @@ export default function Layout({ children }: any) {
 }
 
 const containerStyle = {
-  display: 'flex', flexDirection: 'column', justifyContent: "space-between"
+  display: 'flex', 
+  flexDirection: 'column', 
+  justifyContent: "space-between"
 }

@@ -138,7 +138,6 @@ export default function MainPage() {
 const skillbox = {
   display: 'flex',
   flexDirection: 'column',
-  // bgcolor:'#fff'
 }
 
 const borderLine = {
@@ -157,7 +156,6 @@ const menuStyle = {
   justifyContent: 'center',
   zIndex: 10,
 
-  // bgcolor: "#fff",
   '&:hover': {
     background: '#333',
     color: '#fff'
@@ -172,5 +170,4 @@ const menuBoxStyle = {
   position: 'sticky',
   top: 0,
   mt: 1,
-  // bgcolor:'#fff'
 }

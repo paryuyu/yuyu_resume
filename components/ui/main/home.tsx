@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { useContext, useState } from 'react';
 import { MqContext } from '../../../mq_context/context';
 import HomeItem from '../../Item/homeItem';
@@ -57,7 +57,6 @@ const containerStyle = {
   alignItems: 'center',
   height: '93vh',
   position: 'relative',
-  // backgroundColor: '#fff',
   borderBottom: '2px dashed #333',
 }
 
@@ -66,5 +65,4 @@ const mqcontainerStyle = {
   display: "flex",
   flexDirection: 'column',
   position: 'relative',
-  // backgroundColor: '#fff'
 }

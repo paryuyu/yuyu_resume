@@ -6,9 +6,9 @@ import { PageContextType } from "../../lib/dataType";
 import { useRouter } from "next/router";
 export default function HomemenuDetail({ item, hovered, onHover}: any) {
 
-//onfresh, onpage
+
   const mqValue = useContext(MqContext)
-  const {handlePage , page, fresh, handleFresh} =useContext(PageManageContext) as PageContextType;
+  const { handlePage } =useContext(PageManageContext) as PageContextType;
 
   const router = useRouter();
 

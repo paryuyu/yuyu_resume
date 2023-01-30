@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { BsArrow90DegRight, BsArrowBarRight, BsArrowRight } from "react-icons/bs";
 import { MqContext } from "../../mq_context/context";
 
 function ProjectItem({ item }: any) {

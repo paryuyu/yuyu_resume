@@ -1,8 +1,7 @@
 import { Container, Typography, Box, Grid } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import ProjectItem from "../../Item/projectItem";
 import { projectData } from "../../lib/projectData";
-import { dataType } from "../../lib/dataType"
 import { MqContext } from "../../../mq_context/context";
 
 type data = {
@@ -22,7 +21,7 @@ type data = {
 }
 
 
-function ProjectsPage({ }: any) {
+function ProjectsPage() {
   const mqValue = useContext(MqContext)
 
   return (<Container
@@ -123,7 +122,6 @@ const mqcontainerStyle = {
 
 const outlineBox = {
   width: '50vw',
-  // background: '#fff',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'start',

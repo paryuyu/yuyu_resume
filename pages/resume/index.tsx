@@ -7,9 +7,7 @@ function ResumeIndex() {
 
 
   return ( <>
-  
   <ResumePages/>
- 
   </> );
 }
 

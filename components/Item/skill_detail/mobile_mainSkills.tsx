@@ -1,10 +1,8 @@
-import { SwipeableDrawer, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
 import { skillDataType } from "../../lib/dataType";
-import { projectData } from "../../lib/projectData";
 import { AiOutlineArrowRight } from 'react-icons/ai';
-//RxCross2
+
 
 type props = {
   item: skillDataType,

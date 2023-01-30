@@ -1,6 +1,5 @@
-import { Container, Typography, Grid, Paper } from "@mui/material";
+import { Container, Typography, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import ContactItem from "../../Item/contact";
 import IntoduceItem from "../../Item/introduceItem";
@@ -10,9 +9,8 @@ import { introduce } from '../../lib/selfIntroduceData';
 import { skills } from '../../lib/skills';
 import { MqContext, PageManageContext } from "../../../mq_context/context";
 import { PageContextType } from "../../lib/dataType";
-import { TfiAngleDown } from "react-icons/tfi";
 
-function ResumePages({ onPage }: any) {
+function ResumePages() {
   const mqValue = useContext(MqContext);
   const { handleMenuOpen, headerMenu } = useContext(PageManageContext) as PageContextType;
 
@@ -24,7 +22,6 @@ function ResumePages({ onPage }: any) {
 
 
   useEffect(() => {
-    // console.log(document,'history')
     if (mqValue) {
       setContact(false);
       setEdu(false);
@@ -162,7 +159,6 @@ const mqminititle = {
 
 const minititle = {
   fontFamily: 'serif',
-  // color: '#333',
   '&:hover': {
     color: '#b1b1b1',
     textDecoration: ' underline grey 2px'
@@ -251,6 +247,6 @@ const certificationMent = {
   "&:hover": {
     fontWeight: 'bold',
     textDecoration: 'underline 1px',
-   
+
   }
 }

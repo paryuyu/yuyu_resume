@@ -13,8 +13,7 @@ function MSkillsPage() {
   const [specificProject, setSpecificProject] = useState<any[]>([]);
   const [specificCategory, setSpecificCategory] = useState<string>("")
   const handleSkillsClick = (category: string, title: string) => {
-    // console.log("작동되나?")
-    // setDrawerOpen(true);
+   
     const arr = [] as any[]
     setSpecificCategory(title)
     switch (category) {

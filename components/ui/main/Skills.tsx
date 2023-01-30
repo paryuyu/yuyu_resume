@@ -16,9 +16,9 @@ export default function Skills({ menu }: any) {
   return (
     <Container
 
-      sx={containerStyle }>
+      sx={containerStyle}>
 
-      <Grid sx={ gridStyle }>
+      <Grid sx={gridStyle}>
 
         <Box sx={boxStyle}>
           <Box
@@ -29,7 +29,7 @@ export default function Skills({ menu }: any) {
           </Box>
 
           {lang && skills.filter(one => one.category === "Language").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
+            return (<SkillContent item={one} key={one.id} />)
           })}
 
         </Box>
@@ -42,13 +42,13 @@ export default function Skills({ menu }: any) {
           </Box>
 
           {data && skills.filter(one => one.category === "Database").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
+            return (<SkillContent item={one} key={one.id} />)
           })}
 
         </Box>
       </Grid>
 
-      <Grid className='middle' sx={gridStyle }>
+      <Grid className='middle' sx={gridStyle}>
         <Box sx={runtime ? { ...boxStyle } : { ...boxStyle, height: "100%" }}>
 
           <Box
@@ -59,8 +59,8 @@ export default function Skills({ menu }: any) {
           </Box>
           {runtime && <>
             {runtime && skills.filter(one => one.category === "Runtime Environment").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
-          })}
+              return (<SkillContent item={one} key={one.id} />)
+            })}
           </>}
         </Box>
 
@@ -74,8 +74,8 @@ export default function Skills({ menu }: any) {
           </Box>
           {library && <>
             {library && skills.filter(one => one.category === "Library").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
-          })}
+              return (<SkillContent item={one} key={one.id} />)
+            })}
           </>}
         </Box>
 
@@ -88,8 +88,8 @@ export default function Skills({ menu }: any) {
           </Box>
           {tool && <>
             {tool && skills.filter(one => one.category === "Tools").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
-          })}
+              return (<SkillContent item={one} key={one.id} />)
+            })}
           </>}
         </Box>
 
@@ -103,8 +103,8 @@ export default function Skills({ menu }: any) {
           </Box>
           {framework && <>
             {framework && skills.filter(one => one.category === "Framework").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
-          })}
+              return (<SkillContent item={one} key={one.id} />)
+            })}
           </>}
         </Box>
 
@@ -117,8 +117,8 @@ export default function Skills({ menu }: any) {
           </Box>
           {frameCss && <>
             {frameCss && skills.filter(one => one.category === "Frameworks that help with CSS").map((one) => {
-            return (<SkillContent item={one} key={one.id}  />)
-          })}
+              return (<SkillContent item={one} key={one.id} />)
+            })}
           </>}
         </Box>
       </Grid>
@@ -126,18 +126,6 @@ export default function Skills({ menu }: any) {
 
     </Container>
   );
-}
-
-const mqcontainerStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  borderTop: '2px dashed #333',
-  marginY: 1,
-  p: 0,
-}
-
-const mqgridStyle = {
-  m: 0
 }
 
 const miniheader = {
@@ -168,7 +156,7 @@ const titleStyle = {
 
 
 const containerStyle = {
-  width:"80%",
+  width: "80%",
   minHeight: '95vh',
   position: 'relative',
   display: 'flex',

@@ -1,4 +1,4 @@
-import { Button, Container, Typography, useMediaQuery } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
 import { useContext, useState } from "react";
@@ -84,7 +84,6 @@ export default function IntroPage() {
 }
 const btStyle = {
   border: '1px dotted #333',
-  // color:'#fff',
   fontWeight:100,
   textAlign:'center',
   paddingY:1,
@@ -131,7 +130,6 @@ const hometypo = {
 
 
 const mqhometypo = {
-  // color: '#333',
   fontWeight: 100,
   fontSize: 14,
   mb: 2,

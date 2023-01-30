@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { skillType } from "../../lib/dataType";
 
 export default function ProjectDetailSkill({ skill }: any) {
-  // console.log(skill)
+
   const [skills, setSkills] = useState<skillType>()
   useEffect(() => {
     if (skill) {

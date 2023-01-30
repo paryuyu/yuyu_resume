@@ -1,18 +1,21 @@
+import { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import { Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import { useRouter } from "next/router";
-import { useContext, useEffect, useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
+
 import { projectData } from "../../components/lib/projectData";
-import { dataType, PageContextType } from "../../components/lib/dataType";
-import { skillType } from "../../components/lib/dataType";
-import ProjectDetailSkill from "../../components/Item/project_detail/projectDetailSkill";
-import ProjectDetaiItem from "../../components/Item/project_detail/projectDetailItem";
+import { dataType, PageContextType,skillType } from "../../components/lib/dataType";
+
+
+import { IoIosArrowForward } from "react-icons/io";
 import { MdArrowDropDown } from "react-icons/md";
 import { BsFillCursorFill, BsGithub } from "react-icons/bs";
+
 import { MqContext, PageManageContext } from "../../mq_context/context";
 
-
+import ProjectDetaiItem from "../../components/Item/project_detail/projectDetailItem";
+import ProjectDetailSkill from "../../components/Item/project_detail/projectDetailSkill";
 
 
 export default function ProjectDetail() {
@@ -60,8 +63,6 @@ export default function ProjectDetail() {
     }
   }, [query])
   
-  // console.log(MqValue,"MqValue")
-
   useEffect(() => {
 
     if (item && item.period.length >= 1) {
@@ -364,13 +365,11 @@ const titleBox = {
 }
 
 const containerStyle = {
-  // minWidth: "100%",
   minHeight: '96vh',
   cursor: 'default',
   flexDirection: 'row',
   display: 'flex',
   justifyContent: 'space-around',
-  // bgcolor:'red',
   pt: 2,
   pb: 2
 }

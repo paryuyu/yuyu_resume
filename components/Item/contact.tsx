@@ -14,7 +14,8 @@ function ContactItem() {
   const [mail, setMail] = useState(false);
   const [git, setGit] = useState(false);
   const [notion, setNotion] = useState(false);
-  const handleMove = (evt: any) => {
+
+  const handleMove = (evt:any) => {
 
     if (evt.target.innerText === "u_00y@naver.com") {
       router.push("mailto:u_00y@naver.com")

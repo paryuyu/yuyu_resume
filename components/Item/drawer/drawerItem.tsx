@@ -1,23 +1,28 @@
-import { AiFillProject } from 'react-icons/ai';
-import { BsArrowDownRight } from 'react-icons/bs';
-import { Avatar, Container, IconButton, List, ListItem, ListItemAvatar, ListItemText, SwipeableDrawer, Typography, Box } from "@mui/material";
-import { FiGithub, FiUser, FiTool } from 'react-icons/fi';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
+
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText, SwipeableDrawer, Box } from "@mui/material";
+
+import { FiUser } from 'react-icons/fi';
+import { BsArrowDownRight } from 'react-icons/bs';
+import { AiFillProject } from 'react-icons/ai';
+
+
 import { MqContext, PageManageContext } from '../../../mq_context/context';
 import { PageContextType } from '../../lib/dataType';
+
+
+
 type props = {
   onDrawer: () => void;
   drawerOpen: boolean;
 }
 
 
-
-
 function DrawerItem({ onDrawer, drawerOpen }: props) {
   const router = useRouter();
   const MqValue = useContext(MqContext);
-  const { handleMenuOpen, headerMenu, handlePage, page, fresh, handleFresh } = useContext(PageManageContext) as PageContextType;
+  const {  handlePage, handleFresh } = useContext(PageManageContext) as PageContextType;
 
 
 

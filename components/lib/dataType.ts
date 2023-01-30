@@ -45,3 +45,9 @@ export type PageContextType ={
   pageHistory:string[],
   mainPageHandle:(val:string)=>void
 }
+
+export type selfIntroduceType = {
+  id:number;
+  title:string;
+  content:string;
+}
